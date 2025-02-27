@@ -1,3 +1,9 @@
+let product = {
+    title: "Велосипед",
+    img: "ссылка на картинку",
+    count: 10,
+    favorite: false
+}
 //Счётчик=================
 const btnMinus = document.querySelector("#minus")
 const btnPlus = document.querySelector("#plus")
@@ -21,12 +27,6 @@ btnPlus.addEventListener("click", function() {
     }
 });
 
-let product = {
-    title: "Велосипед",
-    img: "ссылка на картинку",
-    count: 10,
-    favorite: false
-}
 //JSON. Меняем свойства. Кнопка объекта. 
 if (!localStorage.getItem("product")) {
     localStorage.setItem("product", JSON.stringify(product))
@@ -34,9 +34,9 @@ if (!localStorage.getItem("product")) {
 
 const button = document.querySelector(".star")
 
-let initialProdict =  JSON.parse(localStorage.getItem("product")) || product
-    if (initialProdict.favorite) {
-        button.classList.add("favorite-active")
+let initialProduct =  JSON.parse(localStorage.getItem("product")) || product
+    if (initialProduct.favorite) {
+       // button.classList.add("favorite-active")
         document.body.setAttribute("favorite", "dark")
     }else {
         document.body.setAttribute("favorite", "light")
@@ -49,10 +49,10 @@ let initialProdict =  JSON.parse(localStorage.getItem("product")) || product
     localStorage.setItem("product", JSON.stringify(currentProduct));
 
     if (currentProduct.favorite) {
-        button.classList.add("favorite-active")
+        //button.classList.add("favorite-active")
         document.body.setAttribute("favorite", "dark")
     }else {
-        button.classList.remove("favorite-active")
+        //button.classList.remove("favorite-active")
         document.body.setAttribute("favorite", "light")
     }
 });  
